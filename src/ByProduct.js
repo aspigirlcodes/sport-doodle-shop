@@ -20,7 +20,7 @@ function ByProduct({itemKey}){
           <h1>{itemTitles[itemKey][1]}</h1>
           <div className="featuredItems">
           {featuredItems.map((item, i) => 
-          <ProductConfig key={i} {...item} size={250}>
+          <ProductConfig key={`${itemKey}-${i}`} {...item} size={250}>
             {function (props){
               return (
                 <div className="featuredProduct" style={{width:props.size}}>

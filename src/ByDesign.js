@@ -19,7 +19,7 @@ function ByDesign({designKey}){
           <h1>{designTitles[designKey]} Products</h1>
           <div className="featuredItems">
           {featuredItems.map((item, i) => 
-          <ProductConfig key={i} {...item} size={250}>
+          <ProductConfig key={`${designKey}-${i}`} {...item} size={250}>
             {function (props){
               return (
                 <div className="featuredProduct" style={{width:props.size}}>
