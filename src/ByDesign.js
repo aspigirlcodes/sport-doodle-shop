@@ -4,6 +4,7 @@ import Canvas from "./Canvas"
 import Title from "./Title"
 import ProductConfig from "./ProductConfig"
 import MenuBar from "./MenuBar"
+import ColorSelector from "./ColorSelector"
 
 function ByDesign({designKey}){
     const featuredItems = Object.keys(items).map(item => {return{
@@ -22,8 +23,9 @@ function ByDesign({designKey}){
             {function (props){
               return (
                 <div className="featuredProduct" style={{width:props.size}}>
-                  <Canvas {...props}/>
                   <Title {...props}/>
+                  <Canvas {...props}/>
+                  <ColorSelector {...props}/>
                 </div>
               )
             }

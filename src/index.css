@@ -41,12 +41,16 @@ label {
   margin: 10px
 }
 
-.colors-container {
+.colors-container, .items-container, .designs-container{
   border: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: auto 0;
   padding: 0;
+}
+
+.items-container, .designs-container{
+  flex-wrap: wrap;
 }
 
 .colorSelectPreview {
@@ -56,8 +60,8 @@ label {
   margin: 0 auto;
 }
 
-.colorOption input {
-  position: absolute;
+.colorOption input, .itemOption input, .designOption input {
+  position: relative;
   top: 0;
   left: 0;
   opacity: 0;
@@ -67,6 +71,31 @@ label {
   margin: 0;
 }
 
-.colorOption.selected{
+.colorOption.selected, .itemOption.selected, .designOption.selected{
   border-bottom: 2px solid royalblue
+}
+
+.itemOption, .designOption{
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.productConfigurator {
+  width: 1200px;
+  border: 1px solid darkgrey;
+  margin: auto;
+}
+
+.productConfigurator h3 {
+  font-weight: 300;
+  text-align: center;
+}
+
+.productConfigurator canvas{
+  border: 1px solid darkgrey;
 }

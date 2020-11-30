@@ -51,16 +51,19 @@ function drawTshirt(ctx, size, colorName, designName){
     ctx.lineTo(margin, margin + drwSize / 4)
     ctx.closePath()
     ctx.stroke()
-    ctx.fillStyle = colors[colorName][0]
+    ctx.fillStyle = colorName ? colors[colorName][0] : "white"
     ctx.fill()
-    ctx.fillStyle = colors[colorName][1]
-    drawDesign(ctx, designName, design)
+    if (designName){
+        ctx.fillStyle = colorName ? colors[colorName][1] : "black"
+        drawDesign(ctx, designName, design)
+    }
+    
 }
 
 function drawMug(ctx, size, colorName, designName){
     const drwSize = size - 2 * margin
     const design = {centerX: margin + drwSize*2/3, centerY:margin + drwSize/2, maxWidth: drwSize/2, maxHeight: drwSize/1.5}
-    ctx.fillStyle = colors[colorName][0]
+    ctx.fillStyle = colorName ? colors[colorName][0] : "white"
     ctx.fillRect(margin + 1/3 * drwSize, margin, 2/3 * drwSize, drwSize)
     ctx.strokeRect(margin + 1/3 * drwSize, margin, 2/3 * drwSize, drwSize)
     ctx.beginPath()
@@ -69,10 +72,10 @@ function drawMug(ctx, size, colorName, designName){
     ctx.arc(margin + 1/3* drwSize, margin + drwSize/2, drwSize/6, Math.PI*3/2, 1/2*Math.PI, true)
     ctx.stroke()
     ctx.fill()
-
-    ctx.fillStyle = colors[colorName][1]
-    drawDesign(ctx, designName, design)
-
+    if (designName){
+        ctx.fillStyle = colorName ? colors[colorName][1] : "black"
+        drawDesign(ctx, designName, design)
+    }
 }
 
 function drawBag(ctx, size, colorName, designName){
@@ -80,7 +83,8 @@ function drawBag(ctx, size, colorName, designName){
     const delta = drwSize / 80
     const alpha = 0.1
     const design = {centerX: margin + drwSize/2, centerY:margin + drwSize/2, maxWidth: drwSize/4, maxHeight: drwSize/3}
-    ctx.fillStyle = colors[colorName][0]
+    ctx.fillStyle = colorName ? colors[colorName][0] : "white"
+       
     ctx.fillRect(margin + 1/3 *drwSize, margin + 1/4* drwSize, 1/3 * drwSize, 1/2 * drwSize)
     ctx.strokeRect(margin + 1/3 *drwSize, margin + 1/4* drwSize, 1/3 * drwSize, 1/2 * drwSize)
     ctx.beginPath()
@@ -95,9 +99,10 @@ function drawBag(ctx, size, colorName, designName){
     ctx.moveTo(margin + 2/3 * drwSize, margin + 3/4 * drwSize - 2*delta)
     ctx.arc(margin + 2/3 * drwSize, margin + 3/4 * drwSize, 2*delta, 3/2*Math.PI, Math.PI, true)
     ctx.stroke()
-
-    ctx.fillStyle = colors[colorName][1]
-    drawDesign(ctx,designName, design)
+    if (designName){
+        ctx.fillStyle = colorName ? colors[colorName][1] : "black"
+        drawDesign(ctx, designName, design)
+    }
 }
 
 function drawCoaster(ctx, size, colorName, designName){
@@ -114,10 +119,12 @@ function drawCoaster(ctx, size, colorName, designName){
     ctx.arc(margin + 1/10 * drwSize, margin + 9/10 * drwSize, drwSize/10, 1/2*Math.PI, Math.PI)
     ctx.closePath()
     ctx.stroke()
-    ctx.fillStyle = colors[colorName][0]
+    ctx.fillStyle = colorName ? colors[colorName][0] : "white"
     ctx.fill()
-    ctx.fillStyle = colors[colorName][1]
-    drawDesign(ctx, designName, design)
+    if (designName){
+        ctx.fillStyle = colorName ? colors[colorName][1] : "black"
+        drawDesign(ctx, designName, design)
+    }
     
 }
 
@@ -140,4 +147,4 @@ function drawItem(ctx, itemName, size, colorName, designName){
     
 }
 
-export {drawItem, colors, items, designs, itemTitles, designTitles}
+export {drawItem, colors, items, designs, itemTitles, designTitles, drawDesign}

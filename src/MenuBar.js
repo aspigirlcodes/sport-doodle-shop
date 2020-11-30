@@ -35,6 +35,9 @@ function MenuBar(){
                 </div>
                 }
             </div>
+            <div className="menuItem">
+                <Link to="/configurator">Product Configurator </Link>
+            </div>
         </div>
     )
 }
