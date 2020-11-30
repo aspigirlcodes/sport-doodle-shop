@@ -1,0 +1,36 @@
+
+.menubar{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 20%;
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.dropdownContent{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+
+.menuItem, .dropdown{
+    margin: 0 20px
+}
+
+.menubar a {
+    color: white;
+    text-decoration: none;
+}
+
+.menubar button {
+    text-decoration: none;
+    border: none;
+    background-color: inherit;
+    color: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    font-weight: inherit;
+    padding:0
+}

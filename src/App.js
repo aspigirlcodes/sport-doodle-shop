@@ -1,36 +1,16 @@
 import React from "react"
-import {colors, items, designs} from "./helpers"
-import Canvas from "./Canvas"
-import Title from "./Title"
-import ProductConfig from "./ProductConfig"
+import {Router} from "@reach/router"
+import Home from "./Home"
+import ByProduct from "./ByProduct"
+import ByDesign from "./ByDesign"
 
 function App() {
-  const featuredItems = Array.from(new Array(5), a => {return{
-    item: Object.keys(items)[Math.floor(Math.random() * Object.keys(items).length)],
-    color: Object.keys(colors)[Math.floor(Math.random() * Object.keys(colors).length)],
-    design: Object.keys(designs)[Math.floor(Math.random() * Object.keys(designs).length)],
-  }})
-
   return (
-    <div className="App">
-      <h1>Featured Items</h1>
-      <div className="featuredItems">
-      {featuredItems.map((item, i) => 
-      <ProductConfig key={i} {...item} size={250}>
-        {function (props){
-          return (
-            <div className="featuredProduct" style={{width:props.size}}>
-              <Canvas {...props}/>
-              <Title {...props}/>
-            </div>
-          )
-        }
-        }
-      </ProductConfig>)}
-        
-      </div>
-      
-    </div>
+    <Router>
+      <Home path="/" />
+      <ByProduct path="product/:itemKey" />
+      <ByDesign path="design/:designKey" />
+    </Router>
   );
 }
 

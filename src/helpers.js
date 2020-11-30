@@ -16,6 +16,24 @@ const colors = {
 
 const designs = require("./designs.json");
 
+const itemTitles = {
+    tshirt: ["T-shirt", "T-shirts"],
+    bag: ["sports bag", "sports bags"],
+    mug: ["mug", "mugs"],
+    coaster: ["coaster (set of 6)", "coasters"]
+}
+
+const designTitles = {
+    ski: "Skiing",
+    bike: "Bicycle", 
+    horse: "Horsejumping",
+    row: "Rowing",
+    gym: "Gymnastics",
+    basket: "Basketball",
+    foot: "Football", 
+    rope: "Rope skipping"
+}
+
 function drawTshirt(ctx, size, colorName, designName){
     
     const drwSize = size - 2 * margin
@@ -122,4 +140,4 @@ function drawItem(ctx, itemName, size, colorName, designName){
     
 }
 
-export {drawItem, colors, items, designs}
+export {drawItem, colors, items, designs, itemTitles, designTitles}
