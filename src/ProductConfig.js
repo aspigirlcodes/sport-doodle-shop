@@ -1,16 +1,17 @@
-import React from "react"
+import React, { useState } from "react"
 
-class ProductConfig extends React.Component {
-      
-    render() {
-      return (
-        <React.Fragment>
-          {this.props.children(
-            {...this.props}
-          )}
-        </React.Fragment>
-      );
-    }
-  }
+function ProductConfig(props) {
+  const [color, setColor] = useState(props.color)
+  
+    
+  return (
+    <React.Fragment>
+      {props.children(
+        {item: props.item, design: props.design, size: props.size , color, onColorChange: (value) => setColor(value)} 
+      )}
+    </React.Fragment>
+  );
+    
+}
 
 export default ProductConfig

@@ -4,6 +4,7 @@ import Canvas from "./Canvas"
 import Title from "./Title"
 import ProductConfig from "./ProductConfig"
 import MenuBar from "./MenuBar"
+import ColorSelector from "./ColorSelector"
 
 
 function ByProduct({itemKey}){
@@ -23,8 +24,9 @@ function ByProduct({itemKey}){
             {function (props){
               return (
                 <div className="featuredProduct" style={{width:props.size}}>
-                  <Canvas {...props}/>
                   <Title {...props}/>
+                  <Canvas {...props}/>
+                  <ColorSelector {...props}/>
                 </div>
               )
             }
