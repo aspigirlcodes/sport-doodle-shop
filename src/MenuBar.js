@@ -1,11 +1,14 @@
 import { Link } from "@reach/router"
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import {designs, items, designTitles, itemTitles} from "./helpers"
 import "./MenuBar.css"
+import {BasketContext} from "./BasketContext"
 
 function MenuBar(){
     const [designColapse, setDesignColapse] = useState(true)
     const [productColapse, setProductColapse] = useState(true)
+
+    const {basket} = useContext(BasketContext)
     return(
         <div className="menubar">
             <div className="menuItem">
@@ -37,6 +40,9 @@ function MenuBar(){
             </div>
             <div className="menuItem">
                 <Link to="/configurator">Product Configurator </Link>
+            </div>
+            <div className="menuItem push-right">
+            <Link to="/basket">Basket  <span className="badge">{basket.length}</span></Link>
             </div>
         </div>
     )

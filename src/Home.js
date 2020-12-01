@@ -4,6 +4,7 @@ import Canvas from "./Canvas"
 import Title from "./Title"
 import ProductConfig from "./ProductConfig"
 import MenuBar from "./MenuBar"
+import {Price, BuyButton} from "./Price"
 
 function Home() {
   const featuredItems = Array.from(new Array(5), a => {return{
@@ -24,6 +25,11 @@ function Home() {
             <div className="featuredProduct" style={{width:props.size}}>
               <Canvas {...props}/>
               <Title {...props}/>
+              <div className="row centered">
+                <Price {...props}/>
+                <BuyButton {...props}/>
+              </div>
+              
             </div>
           )
         }

@@ -24,6 +24,9 @@ h1{
 }
 
 .featuredProduct{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 20px;
   border: 1px solid darkgrey;
   border-radius: 20px;
@@ -85,6 +88,10 @@ label {
   align-items: flex-start;
 }
 
+.row.centered{
+  align-items: center;
+}
+
 .productConfigurator {
   width: 1200px;
   border: 1px solid darkgrey;
@@ -98,4 +105,43 @@ label {
 
 .productConfigurator canvas{
   border: 1px solid darkgrey;
+}
+
+.priceDisplay {
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.buyButton {
+  background-color: green;
+  color: white;
+  border-radius: 0;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  border: none;
+}
+
+.basketContainer {
+  margin: 0 20%;
+  
+}
+
+.total {
+  border-top: 2px solid black;
+}
+
+.deleteButton {
+  background-color: darkred;
+  color: white;
+  border-radius: 0;
+  padding: 10px;
+  font-size: 1.5rem;
+  border: none;
+}
+
+.basketContainer p {
+  font-size: 1.5rem;
+  font-weight: 300;
 }

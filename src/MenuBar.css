@@ -34,3 +34,20 @@
     font-weight: inherit;
     padding:0
 }
+
+.push-right {
+    margin-left: auto;
+}
+
+.menuItem a {
+    display: flex;
+}
+.badge {
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    padding: 0 5px;
+    margin: 0 5px;
+    font-size: 1rem;
+    align-self: flex-start;
+}

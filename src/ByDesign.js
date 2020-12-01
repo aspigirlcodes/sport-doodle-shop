@@ -5,6 +5,7 @@ import Title from "./Title"
 import ProductConfig from "./ProductConfig"
 import MenuBar from "./MenuBar"
 import ColorSelector from "./ColorSelector"
+import {Price, BuyButton} from "./Price"
 
 function ByDesign({designKey}){
     const featuredItems = Object.keys(items).map(item => {return{
@@ -26,6 +27,10 @@ function ByDesign({designKey}){
                   <Title {...props}/>
                   <Canvas {...props}/>
                   <ColorSelector {...props}/>
+                  <div className="row centered">
+                    <Price {...props}/>
+                    <BuyButton {...props}/>
+                  </div>
                 </div>
               )
             }
