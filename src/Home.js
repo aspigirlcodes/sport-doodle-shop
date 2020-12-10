@@ -5,6 +5,7 @@ import Title from "./Title"
 import ProductConfig from "./ProductConfig"
 import MenuBar from "./MenuBar"
 import {Price, BuyButton} from "./Price"
+import {Link} from "@reach/router"
 
 function Home() {
   const featuredItems = Array.from(new Array(5), a => {return{
@@ -25,6 +26,9 @@ function Home() {
             <div className="featuredProduct" style={{width:props.size}}>
               <Canvas {...props}/>
               <Title {...props}/>
+              <div className="row centered">
+                <Link className="configureButton" to={`/configurator/${props.item}/${props.design}/${props.color}`}>Configure</Link>
+              </div>
               <div className="row centered">
                 <Price {...props}/>
                 <BuyButton {...props}/>

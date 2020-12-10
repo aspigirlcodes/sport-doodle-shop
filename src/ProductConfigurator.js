@@ -7,13 +7,21 @@ import MenuBar from "./MenuBar"
 import ColorSelector from "./ColorSelector"
 import ProductSelector from "./ProductSelector"
 import DesignSelector from "./DesignSelector"
+import { BuyButton, Price } from "./Price"
 
-function ProductConfigurator(){
-    const configurator = {
+function ProductConfigurator(props){
+    let configurator = {}
+    if (props["*"]){
+      const [item, design, color] = props["*"].split("/")
+      configurator = {item, design,color}
+    }else {
+      configurator = {
         item: Object.keys(items)[0],
         color: Object.keys(colors)[0],
         design: Object.keys(designs)[0],
+      }
     }
+    
     
     return (
         <div className="designs">
@@ -40,6 +48,10 @@ function ProductConfigurator(){
                     <div>
                       <h3>Select a design</h3>
                       <DesignSelector {...props}/>
+                      <div className="row centered margin-top">
+                        <Price {...props}/>
+                        <BuyButton {...props}/>
+                      </div>
                     </div>
                   </div>
                   

@@ -17,7 +17,7 @@ function App() {
       <Home path="/" />
       <ByProduct path="product/:itemKey" />
       <ByDesign path="design/:designKey" />
-      <ProductConfigurator path="configurator" />
+      <ProductConfigurator path="configurator/*" />
       <Basket path="basket"/>
     </Router>
     </BasketContext.Provider>

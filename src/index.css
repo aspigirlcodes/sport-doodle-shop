@@ -145,3 +145,17 @@ label {
   font-size: 1.5rem;
   font-weight: 300;
 }
+
+.margin-top{
+  margin-top: 3rem;
+}
+
+.configureButton {
+  background-color: darkgrey;
+  text-decoration: none;
+  color: white;
+  border-radius: 0;
+  padding: 10px;
+  font-size: 1.5rem;
+  border: none;
+}
