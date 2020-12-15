@@ -1,26 +1,30 @@
 import React, { useState } from "react"
 
 function ProductConfig(props) {
-  const [color, setColor] = useState(props.color)
-  const [item, setItem] = useState(props.item)
-  const [design, setDesign] = useState(props.design)
+  const productProps = useProductprops(props.color, props.item,props.design)
     
   return (
     <React.Fragment>
       {props.children(
         {
-          item, 
-          design, 
-          size: props.size , 
-          color, 
-          onColorChange: (value) => setColor(value),
-          onItemChange: (value) =>  setItem(value),
-          onDesignChange: (value) => setDesign(value)
+          ...productProps,
+          size: props.size 
         } 
       )}
     </React.Fragment>
   );
     
+}
+
+
+function useProductprops(initialColor, initialItem, initialDesign){
+  const [color, setColor] = useState(initialColor)
+  const [item, setItem] = useState(initialItem)
+  const [design, setDesign] = useState(initialDesign)
+  return {color, item, design, 
+    oncolorChange: setColor, 
+    onItemChange: setItem, 
+    onDesignChange: setDesign}
 }
 
 export default ProductConfig
